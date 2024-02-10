@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+import theme from "../../../src/theme";
+
+const { animation } = theme;
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="pb-20">
+    <header
+      class="max-w-5xl mx-auto flex justify-center py-10 flex-col items-center"
+    >
+      <h1 class="font-semibold text-4xl pt-10">Tailwind css animations</h1>
+      <h2 class="font-medium opacity-70">The best plugin you need 🚀</h2>
+      <div class="mt-10">
+        <code>npm install @tatuninodev/animations-tailwind</code>
+      </div>
+    </header>
+    <section class="max-w-5xl m-auto grid grid-cols-3 gap-4">
+      {
+        Object.keys(animation).map((animationKey) => {
+          return (
+            <article
+              class="animate-duration-1000 col-span-1 border rounded border-gray-200 hover:border-gray-600 transition cursor-crosshair"
+              data-class={animationKey}
+            >
+              <div class="p-4 flex gap-4 items-center justify-center flex-col w-full h-full">
+                <span class="w-16 h-16 bg-violet-500 rounded-xl flex items-center" />
+                <h3 class="font-semibold text-lg opacity-80">{animationKey}</h3>
+              </div>
+            </article>
+          );
+        })
+      }
+    </section>
+  </main>
+</Layout>
+
+<style></style>
+
+<script>
+  const $articles = document.querySelectorAll("article");
+
+  $articles.forEach(($article) => {
+    const animationKey = $article.getAttribute("data-class");
+    const animationClass = `animate-${animationKey}`;
+    const $box = $article.querySelector("span");
+
+    if ($box == null) return;
+    $article.addEventListener("mouseenter", () => {
+      $box.classList.add(animationClass);
+    });
+    $article.addEventListener("mouseleave", () => {
+      $box.classList.remove(animationClass);
+    });
+  });
+</script>
