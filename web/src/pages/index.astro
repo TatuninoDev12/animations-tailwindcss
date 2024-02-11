@@ -11,128 +11,125 @@ const { animation } = theme;
 const { version } = pkg;
 ---
 
-<div class="z-[-2] w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
-
-  <Layout title="Animations Tailwindcss">
-    <wc-toast></wc-toast>
-    <main class="pb-20">
-      <header
-        class="max-w-4xl mx-auto flex justify-center py-10 flex-col items-center"
+<Layout title="Animations Tailwindcss">
+  <wc-toast></wc-toast>
+  <main class="pb-20">
+    <header
+      class="max-w-4xl mx-auto flex justify-center py-10 flex-col items-center"
+    >
+      <div
+        class="flex items-center justify-center gap-x-2 mb-1 *:inline-flex *:items-center *:justify-center *:rounded *:bg-white/10 *:px-2 *:py-2 *:text-xs *:font-medium"
       >
-        <div
-          class="flex items-center justify-center gap-x-2 mb-1 *:inline-flex *:items-center *:justify-center *:rounded *:bg-white/10 *:px-2 *:py-2 *:text-xs *:font-medium"
+        <span>v.{version}</span>
+        <a
+          aria-label="View website repository on GitHub"
+          href="https://github.com/TatuninoDev12/animations-tailwindcss"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="transition-colors ease-in-out hover:bg-white/20"
         >
-          <span>v.{version}</span>
-          <a
-            aria-label="View website repository on GitHub"
-            href="https://github.com/TatuninoDev12/animations-tailwindcss"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="transition-colors ease-in-out hover:bg-white/20"
-          >
-            <Github class="size-4" />
-          </a>
-        </div>
-        <h1 class="font-semibold text-4xl text-center">Animations Tailwindcss</h1>
-        <h2 class="font-medium opacity-70">The best plugin you need 🚀</h2>
-        <div class="mt-10 px-2 mb-1 sm:px-0">
-          <span class='mb-2 text-md font-semibold opacity-50' >1. Install the
-          dependency
-        </div>
-        <div
-          class="flex w-full max-w-md items-center justify-between gap-x-2 rounded-xl bg-[#1e1e1e] py-1 pl-4 pr-1 text-center text-white backdrop-blur"
+          <Github class="size-4" />
+        </a>
+      </div>
+      <h1 class="font-semibold text-4xl text-center">Animations Tailwindcss</h1>
+      <h2 class="font-medium opacity-70">The best plugin you need 🚀</h2>
+      <div class="mt-10 px-2 mb-1 sm:px-0">
+        <span class='mb-2 text-md font-semibold opacity-50' >1. Install the
+        dependency
+      </div>
+      <div
+        class="flex w-full max-w-md items-center justify-between gap-x-2 rounded-xl bg-[#1e1e1e] py-1 pl-4 pr-1 text-center text-white backdrop-blur"
+      >
+        <pre
+          class="flex text-sm">
+            <Code wrap={true} code='npm install @tatuninodev/animations-tailwindcss' theme="dark-plus" />
+          </pre>
+        <button
+          id="copyNpmInstall"
+          aria-label="Copy npm install command"
+          class="ring-offset-background focus-visible:ring-ring inline-flex size-7 items-center justify-center whitespace-nowrap rounded-full bg-white/10 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none"
         >
-          <pre
-            class="flex text-sm">
-              <Code wrap={true} code='npm install @tatuninodev/animations-tailwindcss' theme="dark-plus" />
-            </pre>
-          <button
-            id="copyNpmInstall"
-            aria-label="Copy npm install command"
-            class="ring-offset-background focus-visible:ring-ring inline-flex size-7 items-center justify-center whitespace-nowrap rounded-full bg-white/10 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none"
-          >
-            <CopyIcon/>
-          </button>
-        </div>
-        <span class="mb-1 mt-4 block text-left text-md font-semibold opacity-50">2. Add to your configuration</span
-        >
-        <div
-          class="flex w-full max-w-md items-center gap-x-2 rounded-xl bg-[#1e1e1e] py-3 pl-4 pr-4 text-center text-white backdrop-blur"
-        >
-          <pre
-            class="flex text-left text-xs">
-              <Code wrap={true} theme="dark-plus" lang="js" code={`import animations from '@tatuninodev/animations-tailwindcss'
-  
+          <CopyIcon/>
+        </button>
+      </div>
+      <span class="mb-1 mt-4 block text-left text-md font-semibold opacity-50">2. Add to your configuration</span
+      >
+      <div
+        class="flex w-full max-w-md items-center gap-x-2 rounded-xl bg-[#1e1e1e] py-3 pl-4 pr-4 text-center text-white backdrop-blur"
+      >
+        <pre
+          class="flex text-left text-xs">
+            <Code wrap={true} theme="dark-plus" lang="js" code={`import animations from '@tatuninodev/animations-tailwindcss'
+
 export default {
-  // ...rest of the options
+// ...rest of the options
   plugins: [animations],
 }`} />
-            </pre>
+          </pre>
+      </div>
+    </header>
+    <section class='mb-6 flex items-center justify-center'>
+      <label class='relative inline-flex cursor-pointer items-center'>
+        <input type='checkbox' value='' class='peer sr-only' id='animate' />
+        <div
+          class="rtl:peer-checked:after:-translate-x- peer h-8 w-16 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-7 after:w-7 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-violet-500 peer-checked:after:translate-x-[31px] peer-checked:after:border-white peer-focus:outline-none dark:bg-zinc-300"
+        >
         </div>
-      </header>
-      <section class='mb-6 flex items-center justify-center'>
-        <label class='relative inline-flex cursor-pointer items-center'>
-          <input type='checkbox' value='' class='peer sr-only' id='animate' />
-          <div
-            class="rtl:peer-checked:after:-translate-x- peer h-8 w-16 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-7 after:w-7 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-violet-500 peer-checked:after:translate-x-[31px] peer-checked:after:border-white peer-focus:outline-none dark:bg-zinc-300"
-          >
-          </div>
-          <span class='ms-3 text-xl font-medium opacity-70'>Animate all</span>
-        </label>
-      </section>
-      <section class="max-w-5xl m-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 px-4 gap-4">
-        {
-          Object.keys(animation).map((animationKey) => {
-            return (
-              <article
-                class="animate-duration-1000 relative col-span-1 border rounded border-gray-700 hover:border-gray-500 transition cursor-crosshair"
-                data-class={animationKey}
-              >
-                <div class="p-4 flex gap-4 items-center justify-center flex-col w-full h-full">
-                  <span class="w-16 h-16 bg-violet-500 rounded-xl flex items-center" />
-                  <p class="font-semibold text-lg opacity-80">{animationKey}</p>
-                </div>
-                <button
-                    aria-label={`Copy ${animationKey.split('-').join(' ')} animation`}
-                    class='absolute right-2 top-2'
-                  >
-                    <CopyIcon />
-                  </button>
-              </article>
-            );
-          })
-        }
-      </section>
-      <footer
-      class='mx-auto flex flex-col max-w-2xl items-center justify-center px-4 pb-10 pt-20 text-center text-sm opacity-60'
-    >
-      <p>
-        Based on <a
-          href='https://animation.ibelick.com/'
-          target='_blank'
-          rel='noopener noreferrer'
-          class="text-violet-400">Julien Thibeaut Tailwind animations</a
-        >
-         & <a 
-         href="https://github.com/midudev"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="text-violet-400">Midudev</a>
-      </p>
+        <span class='ms-3 text-xl font-medium opacity-70'>Animate all</span>
+      </label>
+    </section>
+    <section class="max-w-5xl m-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 px-4 gap-4">
+      {
+        Object.keys(animation).map((animationKey) => {
+          return (
+            <article
+              class="animate-duration-1000 relative col-span-1 border rounded border-gray-700 hover:border-gray-500 transition cursor-crosshair"
+              data-class={animationKey}
+            >
+              <div class="p-4 flex gap-4 items-center justify-center flex-col w-full h-full">
+                <span class="w-16 h-16 bg-violet-500 rounded-xl flex items-center" />
+                <p class="font-semibold text-lg opacity-80">{animationKey}</p>
+              </div>
+              <button
+                  aria-label={`Copy ${animationKey.split('-').join(' ')} animation`}
+                  class='absolute right-2 top-2'
+                >
+                  <CopyIcon />
+                </button>
+            </article>
+          );
+        })
+      }
+    </section>
+    <footer
+    class='mx-auto flex flex-col max-w-2xl items-center justify-center px-4 pb-10 pt-20 text-center text-sm opacity-60'
+  >
+    <p>
+      Based on <a
+        href='https://animation.ibelick.com/'
+        target='_blank'
+        rel='noopener noreferrer'
+        class="text-violet-400">Julien Thibeaut Tailwind animations</a
+      >
+        & <a 
+        href="https://github.com/midudev"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-violet-400">Midudev</a>
+    </p>
 
-      <p>
-        Created by <a
-          href='https://github.com/TatuninoDev12/animations-tailwindcss'
-          target='_blank'
-          rel='noopener noreferrer'
-          class="text-violet-400">TatuninoDev</a
-        >
-      </p>
-      
-    </footer>
-    </main>
-  </Layout>
-</div>
+    <p>
+      Created by <a
+        href='https://github.com/TatuninoDev12/animations-tailwindcss'
+        target='_blank'
+        rel='noopener noreferrer'
+        class="text-violet-400">TatuninoDev</a
+      >
+    </p>
+    
+  </footer>
+  </main>
+</Layout>
 
 <style></style>
 
